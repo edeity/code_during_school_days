@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>three.js / editor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+<body ontouchstart="">
+<link href="css/main.css" rel="stylesheet"/>
+<link id="theme" href="css/light.css" rel="stylesheet"/>
+
+<!--基本库-->
+<script src="js/libs/three.min.js"></script>
+<script src="js/libs/system.min.js"></script>
+
+<!--加载模型的js文件-->
+<script src="js/controls/EditorControls.js"></script>
+<script src="js/controls/TransformControls.js"></script>
+<script src="js/loaders/AWDLoader.js"></script>
+<script src="js/loaders/BabylonLoader.js"></script>
+<script src="js/loaders/ColladaLoader.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src="js/loaders/PLYLoader.js"></script>
+<script src="js/loaders/STLLoader.js"></script>
+<script src="js/loaders/UTF8Loader.js"></script>
+<script src="js/loaders/VRMLLoader.js"></script>
+<script src="js/loaders/VTKLoader.js"></script>
+<script src="js/loaders/ctm/lzma.js"></script>
+<script src="js/loaders/ctm/ctm.js"></script>
+<script src="js/loaders/ctm/CTMLoader.js"></script>
+<script src="js/exporters/OBJExporter.js"></script>
+<script src="js/exporters/STLExporter.js"></script>
+
+<!--加载场景的js文件-->
+<script src="js/loaders/deprecated/SceneLoader.js"></script>
+
+<!--渲染器-->
+<script src="js/renderers/Projector.js"></script>
+<script src="js/renderers/CanvasRenderer.js"></script>
+<script src="js/renderers/RaytracingRenderer.js"></script>
+<script src="js/renderers/SoftwareRenderer.js"></script>
+<script src="js/renderers/SVGRenderer.js"></script>
+
+<!---->
+<link rel="stylesheet" href="js/libs/codemirror/codemirror.css">
+<link rel="stylesheet" href="js/libs/codemirror/theme/monokai.css">
+<script src="js/libs/codemirror/codemirror.js"></script>
+<script src="js/libs/codemirror/mode/javascript.js"></script>
+<script src="js/libs/esprima.js"></script>
+
+<!--其他类库-->
+<script src="js/libs/jszip.min.js"></script>
+<script src="js/libs/sortable.min.js"></script>
+<script src="js/libs/signals.min.js"></script>
+<script src="js/libs/ui.js"></script>
+<script src="js/libs/ui.three.js"></script>
+<script src="js/libs/jquery-2.1.3.min.js"></script>
+
+<script src="js/libs/app.js"></script>
+<script src="js/Player.js"></script>
+<script src="js/Script.js"></script>
+
+<script src="js/effects/VREffect.js"></script>
+<script src="js/controls/VRControls.js"></script>
+
+<script src="js/Storage.js"></script>
+<script src="js/i18n/I18n.js"></script>
+
+<!--界面-->
+<script src="js/Editor.js"></script>
+<script src="js/Config.js"></script>
+<script src="js/Loader.js"></script>
+<script src="js/Menubar.js"></script>
+<script src="js/Menubar.File.js"></script>
+<script src="js/Menubar.Edit.js"></script>
+<script src="js/Menubar.Add.js"></script>
+<script src="js/Menubar.View.js"></script>
+<script src="js/Menubar.Status.js"></script>
+<script src="js/Menubar.Language.js"></script>
+<script src="js/Sidebar.js"></script>
+<script src="js/Sidebar.Scene.js"></script>
+<script src="js/Sidebar.Material.js"></script>
+<script src="js/Sidebar.Text.js"></script>
+<script src="js/Toolbar.js"></script>
+<script src="js/Viewport.js"></script>
+<script src="js/Viewport.Info.js"></script>
+
+<!--字体-->
+<script src="js/font/helvetiker_regular.typeface.js"></script>
+
+<script>
+
+    window.URL = window.URL || window.webkitURL;
+    window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder;
+
+    Number.prototype.format = function () {
+        return this.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    };
+
+    var editor = new Editor();
+
+    new I18n(editor).getLanguage(editor.config.getKey('language'), function() {
+
+        var viewport = new Viewport( editor );
+        document.body.appendChild( viewport.dom );
+
+        var script = new Script( editor );
+        document.body.appendChild( script.dom );
+
+        var player = new Player( editor );
+        document.body.appendChild( player.dom );
+
+        var toolbar = new Toolbar( editor );
+        document.body.appendChild( toolbar.dom );
+
+        var menubar = new Menubar( editor );
+        document.body.appendChild( menubar.dom );
+
+        var sidebar = new Sidebar( editor );
+        document.body.appendChild( sidebar.dom );
+
+        var dialog = new UI.Dialog();
+        document.body.appendChild( dialog.dom );
+
+        //
+
+        editor.setTheme( editor.config.getKey( 'theme' ) );
+
+        editor.storage.init( function () {
+
+            editor.storage.get( function ( state ) {
+
+                if ( state !== undefined ) {
+
+                    editor.fromJSON( state );
+
+                }
+
+                var selected = editor.config.getKey( 'selected' );
+
+                if ( selected !== undefined ) {
+
+                    editor.selectByUuid( selected );
+
+                }
+
+            } );
+
+            //
+
+            var timeout;
+
+            var saveState = function ( scene ) {
+
+                if ( editor.config.getKey( 'autosave' ) === false ) {
+
+                    return;
+
+                }
+
+                clearTimeout( timeout );
+
+                timeout = setTimeout( function () {
+
+                    editor.signals.savingStarted.dispatch();
+
+                    timeout = setTimeout( function () {
+
+                        editor.storage.set( editor.toJSON() );
+
+                        editor.signals.savingFinished.dispatch();
+
+                    }, 100 );
+
+                }, 1000 );
+
+            };
+
+            var signals = editor.signals;
+
+            signals.editorCleared.add( saveState );
+            signals.geometryChanged.add( saveState );
+            signals.objectAdded.add( saveState );
+            signals.objectChanged.add( saveState );
+            signals.objectRemoved.add( saveState );
+            signals.materialChanged.add( saveState );
+            signals.sceneGraphChanged.add( saveState );
+            signals.scriptChanged.add( saveState );
+
+        } );
+
+        //
+
+        document.addEventListener( 'dragover', function ( event ) {
+
+            event.preventDefault();
+            event.dataTransfer.dropEffect = 'copy';
+
+        }, false );
+
+        document.addEventListener( 'drop', function ( event ) {
+
+            event.preventDefault();
+
+            if ( event.dataTransfer.files.length > 0 ) {
+
+                editor.loader.loadFile( event.dataTransfer.files[ 0 ] );
+
+            }
+
+        }, false );
+
+        document.addEventListener( 'keydown', function ( event ) {
+
+            switch ( event.keyCode ) {
+
+                case 8: // prevent browser back
+                    event.preventDefault();
+                    break;
+
+            }
+
+        }, false );
+
+        var onWindowResize = function ( event ) {
+
+            editor.signals.windowResize.dispatch();
+
+        };
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+        onWindowResize();
+
+        //
+
+        var file = null;
+        var hash = window.location.hash;
+
+        if ( hash.substr( 1, 4 ) === 'app=' ) file = hash.substr( 5 );
+        if ( hash.substr( 1, 6 ) === 'scene=' ) file = hash.substr( 7 );
+
+        if ( file !== null ) {
+
+            if ( confirm( 'Any unsaved data will be lost. Are you sure?' ) ) {
+
+                var loader = new THREE.XHRLoader();
+                loader.crossOrigin = '';
+                loader.load( file, function ( text ) {
+
+                    var json = JSON.parse( text );
+
+                    editor.clear();
+                    editor.fromJSON( json );
+
+                } );
+
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

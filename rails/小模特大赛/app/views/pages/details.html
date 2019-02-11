@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="css/common&v1.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-3.3.1.min.css">
+    <script type="text/javascript" src="js/libs/rem.js"></script>
+    <style>
+        .whole {    background-image: url("img/bg/simple_bg.jpg");  background-repeat: repeat-y; padding-bottom: 5rem;}
+        .swiper-container {  width: 19rem;  height: 25.58rem;  margin-top: 4rem;  margin-bottom: 2rem;  }
+        .swiper-container img {  width: 100%;  height: 100%;  }
+    </style>
+    <title>我家宝贝正在参与2016韩都衣舍•潮童星
+        国际少儿超模大赛，快来帮我投一票吧～</title>
+</head>
+<body>
+<div class="whole">
+    <!--内容开始-->
+    <div class="bg_cover">
+        <!--背景-->
+        <div class="bg">
+            <img src="img/bg/poster_vote_v4.jpg" onclick="location.href='http://mp.weixin.qq.com/s?__biz=MzAxMDA5MTU3Nw==&mid=402206674&idx=1&sn=5c3917b5c6fc9f6dc6472e360d2e59b7#rd '">
+            <img src="img/bg/bg_01.jpg">
+            <img src="img/bg/bg_002.jpg">
+            <img src="img/bg/bg_003.jpg">
+            <img src="img/bg/bg_004.jpg">
+            <img src="img/bg/bg_08_baby.jpg">
+        </div>
+    </div>
+    <div id="data_container">
+        <div style=" color:#FFFFFF;letter-spacing:.2rem;">
+            一个ID每天可投3票（针对不同选手）
+        </div>
+        <div>
+            <img src="img/figure.png" class="figure01">
+        </div>
+        <div class="note" style=" ">
+            温馨提示：分享此个人页，可让朋友直接为宝宝投票哦～
+        </div>
+        <div class="data_baby">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <ul class="baby_list" style=" text-align:left; padding:5% 5% 9% 20%;">
+                <li><label>编号：</label><span id="model-id"></span></li>
+                <li><label>姓名：</label><span id="model-name"></span></li>
+                <li><label>性别：</label><span id="model-sexulaity"></span></li>
+                <li><label>所在地：</label><span id="model-city"></span></li>
+                <li><label>时尚宣言：</label><span id="model-enounce"></span></li>
+                <li><label>当前得票：</label><span id="model-vote-num"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="baby_sub_button"><a id="vote">给TA投票</a></div>
+</div>
+<!--页脚-->
+<footer>
+    <a class="btn" href="/signup">我要报名<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn active" href="/vote">我要投票<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/rules">活动规则<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/lottery">参与有礼</a>
+</footer>
+</body>
+<script src="js/libs/jquery-2.2.0.min.js"></script>
+<script src="js/libs/swiper-3.3.1.jquery.min.js"></script>
+<script src="js/pages/jquery.tips.min.js"></script>
+<script src="js/pages/details.min.js"></script>
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500035058"></script>
+</html>

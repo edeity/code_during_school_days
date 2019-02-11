@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/libs/jquery-2.2.0.min.js"></script>
+    <style>
+        input {  padding: 8px;  }
+        .btn {  display: inline-block;  padding: 5px;  }
+        .search-btn {  background-color: #E7970F;  color: white;  }
+        .update-btn {  background-color: deepskyblue;  color: white;  }
+        .delete-btn {  background-color: firebrick;  color: white;  }
+    </style>
+</head>
+<body>
+    <label>请输入选手编号:</label>
+    <input id="search-input" type="text" placeholder="请输入参赛选手编号">
+    <a id="search" class="btn search-btn">查询</a>
+    <label>请输入口令:</label>
+    <input id="admin-token" type="password" placeholder="请输入口令">
+
+    <p>Tips: 请勿同时修改多名参赛选手信息</p>
+    <table id="model-container">
+       <tr>
+           <th>参赛号码</th>
+           <th>姓名</th>
+           <th>电话号码</th>
+           <th>性别</th>
+           <th>宣言</th>
+           <th>地址</th>
+           <th>更新</th>
+           <th>删除</th>
+       </tr>
+    </table>
+    <script>
+        $(function() {
+            var modelContainer = $('#model-container');
+            var token = 'mnhl2016';
+
+            // 搜索
+            $('#search').on('click', function() {
+                if($('#admin-token').val() === token) {
+                    var searchId = $('#search-input').val();
+                    $.get('./admin/each/' + searchId, function(data) {
+                        if(data.status === 0) {
+                            var user = data.user;
+
+                            var id = user.id;
+                            var name = user.name;
+                            var phone = user.phone;
+                            var sex = user.sex;
+                            var slogan = user.slogan;
+                            var address = user.address;
+
+                            var tempRow = $('<tr>');
+                            tempRow.append($('<td>').append($('<span class="id">').text(id)));
+                            tempRow.append($('<td>').append($('<input class="name">').attr('placeholder', name)));
+                            tempRow.append($('<td>').append($('<input class="phone">').attr('placeholder', phone)));
+                            tempRow.append($('<td>').append($('<input class="sex">').attr('placeholder', sex)));
+                            tempRow.append($('<td>').append($('<input class="slogan">').attr('placeholder', slogan)));
+                            tempRow.append($('<td>').append($('<input class="address">').attr('placeholder', address)));
+                            var updateBtn = $('<a>更新</a>').addClass('btn update-btn').attr('data-update-id', id);
+                            var deleteBtn = $('<a>删除</a>').addClass('btn delete-btn').attr('data-delete-id', id);
+                            updateBtn.on('click', function() {
+                                var id = $(this).attr('data-update-id');
+                                var postData = generatePostData($(this).parent().parent());
+                                updateRecord(id, postData);
+                            })
+                            deleteBtn.on('click', function() {
+                                var isConfirm = confirm('删除后,数据不可恢复, 请选择是否继续?');
+                                if(isConfirm) {
+                                    var id = $(this).attr('data-delete-id');
+                                    deleteRecord(id);
+                                }
+                            })
+                            tempRow.append($('<td>').append(updateBtn));
+                            tempRow.append($('<td>').append(deleteBtn));
+
+
+                            modelContainer.append(tempRow);
+                        }else if(data.status === 1){
+                            alert(data.msg);
+                        }
+                    }).error(function() {
+                        alert('无法连接到服务器');
+                    })
+                }else {
+                    alert('口令不正确')
+                }
+            });
+
+            /**
+             * 生成提交的数据
+             * @param tr
+             */
+            function generatePostData(tr) {
+                var name = tr.find('.name').val();
+                var phone = tr.find('.phone').val();
+                var sex = tr.find('.sex').val();
+                var slogan = tr.find('.slogan').val();
+                var address = tr.find('.address').val();
+                return {
+                    name: name,
+                    phone: phone,
+                    sex: sex,
+                    slogan: slogan,
+                    address: address
+                }
+            }
+
+            /**
+             * 更新
+             */
+            function updateRecord(id, postData) {
+                $.post('admin/update/' + id, postData, function(data) {
+                    if(data.status === 0) {
+                        alert('更新成功');
+                        location.reload();
+                    }else {
+                        alert('更新失败, 请稍后再试');
+                    }
+                })
+            }
+
+            /**
+             * 删除
+             */
+            function deleteRecord(id) {
+                $.post('admin/delete/' + id, function(data) {
+                    if(data.status === 0) {
+                        alert('删除成功');
+                        location.reload();
+                    }else {
+                        alert('删除失败, 请稍后再试');
+                    }
+                })
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/common&v1.css">
+    <link rel="stylesheet" type="text/css" href="css/loading.css">
+    <script type="text/javascript" src="js/libs/rem.js"></script>
+
+    <style>
+        .whole {    background-image: url("img/bg/simple_bg.jpg");  background-repeat: repeat-y;}
+        /* fix: 加载过程中 短暂呈现addimg_pop */
+        .addimg_pop {  display: none;  }
+        /* 手势识别插件 */
+        .clip-tips {text-align: center; color: #E7970F;}
+        .clip-close {position: absolute;  z-index: 2; right: 2rem; top: 2rem; width: 4rem; height: 4rem;}
+        .clip-panel {  position: fixed;  display: none;  top: 0;  left: 0;  z-index: 1000;  background-color: white;  }
+        .clip-area {  width: 32rem;  }
+        .clip-file {  display: none;  }
+        .clip-btn {  display: block;  position: relative;  top: -8rem; /* 非标准居中 */  width: 10rem;  height: 5rem;  left: 0;  right: 0;  margin: 0 auto;  background: #E7970A;  color: white;  border-radius: 1rem;  font-size: 1.5rem;  text-align: center;  line-height: 5rem;  }
+        .pre-view {  background: url('img/up_bunner.png')  }
+        .pre-view, .view {  display: inline-block;  width: 4.58rem;  height: 5.72rem;  margin-bottom: 1rem;  background-color: #666666;  }
+        /* 其他样式微调 */
+        input[type="radio"] {  margin: 0 0.7rem;  }
+
+        /* 不可点击样式 */
+        .unclickable {  background-color: #c8c8c8 !important;}
+    </style>
+    <title>2016韩都衣舍·潮童星国际少儿超模大赛，火热报名中！想做时尚小网红？快快加入进来！</title>
+</head>
+<body>
+<div class="whole">
+    <div id="sign_container">
+        <img src="img/figure.png" class="figure01">
+
+        <div class="fill_info">
+            <div class="" style="float:left; margin-top:.25rem;">
+                <p style="color: #f00;font-weight: bold;">5月5日-5月18日10点为复赛阶段，只针对进入复赛的前40名参赛选手
+                </p>
+            </div>
+            <div class="round" style="float:left; margin-top:.25rem;">
+                <span class="number">1</span>
+            </div>
+            <div class="headline" style=" float:left;">
+                <span style="letter-spacing:.15rem;">填写信息</span>&nbsp;
+                <span style=" font-size:1rem;">（要求：0至12岁时尚男女童）</span>
+            </div>
+            <form>
+                <ul>
+                    <li>
+                        <label>宝贝姓名</label>
+                        <input type="text" style=" width:6rem;" name="name" id="name" maxlength="10"></li>
+                    <li>
+                        <label>宝贝性别</label>
+                        <input type="radio" name="sexuality" value="男" checked><span>男</span>
+                        <input type="radio" name="sexuality" value="女"><span>女</span>
+                    </li>
+                    <li>
+                        <label>联系电话</label>
+                        <input type="tel" style="width:10rem;" name="phone" id="phone">
+                    </li>
+                    <li>
+                        <label>所在地址</label>
+                        <input type="text" placeholder="省/市/区（县）" style=" width:15rem;" name="address" id="address">
+                    </li>
+                </ul>
+            </form>
+            <div class="boy" style=" width:4.8rem; height:5rem; top:11.3rem; right:5rem;"><img src="img/boy.png">
+            </div>
+        </div>
+        <img src="img/figure.png" class="figure01">
+
+        <div class="up_img">
+            <div class="round_cover">
+                <div class="round">
+                    <span class="number">2</span>
+                </div>
+            </div>
+            <div class="headline">
+                <span style="letter-spacing:.15rem;">&nbsp;上传图片</span>
+                <span style=" font-size:1rem;">（提示：3 张近期清晰照片，竖版图最佳，默认第 1 张为展示图片）</span>
+            </div>
+            <div class="sel_file">
+                <a id="sel_img">选择文件</a>
+                <span style=" float:left; font-size:.9rem; margin-left: .5rem;">已上传<span id="upload-img-num" style="margin-left: .3rem;">0</span>/3</span>
+            </div>
+        </div>
+        <img src="img/figure.png" class="figure01">
+
+        <div class="my_slogan">
+            <div class="round_cover">
+                <div class="round">
+                    <span class="number">3</span>
+                </div>
+            </div>
+            <div class="headline" style=" text-align:left;">
+                <span style="letter-spacing:.15rem;">&nbsp;时尚宣言</span>
+                <span style=" font-size:.9rem;"></span>
+            </div>
+            <div>
+                <input type="text" placeholder="我要做T台上最闪耀的小公主（宣言字数：25个字符以内）" id="enounce" maxlength="25">
+            </div>
+            <div class="girl" style=" width:2.4rem; height:5.25rem; top:.07rem; right:4rem;"><img
+                    src="img/girl.png"></div>
+        </div>
+        <div class="note">
+            <div><img src="img/heart.png">
+                <span style=" font-size:1.5rem;">&nbsp;温馨提示</span>
+            </div>
+            <div style=" margin-top:.2rem; font-size:1.1rem;">信息一旦提交无法进行二次修改,请核实后提交。如有疑问，请联系微信值班客服（minizaru819）
+            </div>
+        </div>
+        <div class="submit_button"><a id="submit">提交</a></div>
+    </div>
+
+    <!--内容开始-->
+    <div class="bg_cover">
+        <!--背景 S -->
+        <div class="bg">
+            <img src="img/bg/poster_signup_001.jpg">
+            <img src="img/bg/bg_01.jpg">
+            <img src="img/bg/bg_002.jpg">
+            <img src="img/bg/bg_003.jpg">
+            <img src="img/bg/bg_004.jpg">
+            <img src="img/bg/bg_08_sign.jpg">
+        </div>
+        <!--背景 E -->
+    </div>
+
+</div>
+
+<!-- loading 特效 -->
+<div class="sk-double-bounce">
+    <div class="sk-child sk-double-bounce1"></div>
+    <div class="sk-child sk-double-bounce2"></div>
+</div>
+
+<!-- 添加图片 弹出框 S -->
+<div class="addimg_pop" id="pop">
+    <div class="close_bunner" id="close_bunner" href=""><img src="img/close.png"></div>
+    <img src="img/img_up_bg1.png" class="top">
+    <!--背景-->
+    <div class="middle">
+        <div class="bg_img">
+            <img src="img/img_up_bg2.png">
+        </div>
+        <a id="first-img" class="add_img pre-view" style="margin-left:6.6rem;"></a>
+        <a id="second-img" class="add_img pre-view" style="display: none;"></a>
+        <a id="third-img" class="add_img pre-view" style="display: none;"></a>
+
+    </div>
+    <!-- 截取组件 S -->
+    <div id="first-clip-panel" class="clip-panel">
+        <p class="clip-tips">温馨提示:两指一转，可将图片旋转90度。</p>
+        <img id="first-close" class="clip-close" src="img/close.png">
+        <input type="file" id="first-file" class='clip-file'>
+        <div id="first-clip-area" class="clip-area"></div>
+        <a id="first-clip-btn" class="btn clip-btn">截取</a>
+    </div>
+    <div id="second-clip-panel" class="clip-panel">
+        <img id="second-close" class="clip-close" src="img/close.png">
+        <input type="file" id="second-file" class='clip-file'>
+        <div id="second-clip-area" class="clip-area"></div>
+        <a id="second-clip-btn" class="btn clip-btn">截取</a>
+    </div>
+    <div id="third-clip-panel" class="clip-panel">
+        <img id="third-close" class="clip-close" src="img/close.png">
+        <input type="file" id="third-file" class="clip-file">
+        <div id="third-clip-area" class="clip-area"></div>
+        <a id="third-clip-btn" class="btn clip-btn">截取</a>
+    </div>
+    <!-- 截取组件 E -->
+
+    <div class="bottom">
+        <a id="upload-img">全部上传</a>
+    </div>
+
+</div>
+<!-- 添加图片 弹出框 E -->
+
+<!-- 页脚 S -->
+<footer>
+    <a class="btn active" href="/signup">我要报名<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/vote">我要投票<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/rules">活动规则<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/lottery">参与有礼</a>
+</footer>
+<!-- 页脚 E -->
+
+
+<div id="cover_bg"></div>
+</body>
+<script src="js/libs/iscroll-zoom.js"></script>
+<script src="js/libs/hammer.js"></script>
+<script src="js/libs/jquery-2.2.0.min.js"></script>
+<script src="js/libs/jquery.photoClip.min.js"></script>
+<script src="js/pages/jquery.tips.min.js"></script>
+<script src="js/pages/signup&v15.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#pop").hide(); //先让div隐藏
+        $("#sel_img").click(function () {
+            $("#pop").fadeIn(400);//显示div
+            $('#cover_bg').fadeIn(200);//背景遮罩
+        });
+        $("#close_bunner").click(function () {
+            $("#pop").fadeOut(200);//隐藏div
+            $('#cover_bg').fadeOut(200);//背景遮罩
+        })
+    });
+</script>
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500035058"></script>
+</html>

@@ -1,0 +1,87 @@
+/*App Start*/
+body {
+    width: 984px;
+    margin: 0 auto;
+    padding: 30px;
+
+    background-color: #F5F5F5;
+}
+
+#mou-app {
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px 10px #919191;
+
+    overflow: hidden;
+}
+/*App End*/
+
+/*StatePanel Start*/
+#state-panel {
+    width: 984px;
+    height: 23px;
+    border-top: 1px solid #DADADA;
+    border-bottom: 1px solid #C0C0C0;
+
+    background: linear-gradient(#F5F5F5, #D4D4D4);
+    background: -webkit-linear-gradient(#F5F5F5, #D4D4D4);
+    color: #021000;
+    text-align: center;
+}
+
+/*add -2015/12/17*/
+#state-panel>span, #state-panel>input {
+    text-align: center;
+}
+/*StatePanel End*/
+
+/*InputPanel && RenderPanel Start*/
+.input-panel, #render-panel {
+    float: left;
+    display: inline-block;
+
+    width: 430px;
+    height: 580px;
+    padding: 30px;
+}
+.input-panel {
+    border: none;
+    border-right: 4px solid #E8E8E8;
+
+    font-size: 15px;
+    resize: none;
+    /*取消蓝色边框*/
+    outline: none;
+}
+/*InputPanel && RenderPanel End*/
+
+/*RenderPanel Start*/
+#render-panel {
+    background-color: white;
+
+    overflow: auto;
+}
+/*RenderPanel End*/
+
+/*Tools Start*/
+.show-msg {  display: block;  }
+.hide-msg {  display: none;  }
+.show-msg {
+    position: absolute;
+    z-index: 99;
+    top: 40%;
+    left: 35%;
+    right: 35%;
+
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+    color: white;
+    background: black;
+
+    font-size: 30px;
+    text-align: center;
+    opacity: 0.5;
+}
+/*Tools End*/

@@ -1,0 +1,236 @@
+{
+  "type": "en",
+  "menubar": {
+    "File.js": {
+      "File": "File",
+      "New": "New",
+      "Import": "Import",
+      "Export Geometry": "Export Geometry",
+      "Export Object": "Export Object",
+      "Export Scene": "Export Scene",
+      "Export OBJ": "Export OBJ",
+      "Export STL": "Export STL",
+      "Publish": "Publish"
+    },
+    "Edit.js": {
+      "Edit": "Edit",
+      "Clone": "Clone",
+      "Delete": "Delete"
+    },
+    "Add.js": {
+      "Add": "Add",
+      "Group": "Group",
+      "Plane": "Plane",
+      "Box": "Box",
+      "Circle": "Circle",
+      "Cylinder": "Cylinder",
+      "Sphere": "Sphere",
+      "Icosahedron": "Icosahedron",
+      "Torus": "Torus",
+      "TorusKnot": "TorusKnot",
+      "Sprite": "Sprite",
+      "PointLight": "PointLight",
+      "SpotLight": "SpotLight",
+      "DirectionalLight": "DirectionalLight",
+      "HemisphereLight": "HemisphereLight",
+      "AmbientLight": "AmbientLight",
+      "PerspectiveCamera": "PerspectiveCamera"
+    },
+    "View.js": {
+      "View": "View",
+      "Light theme": "Light theme",
+      "Dark theme": "Dark theme",
+      "Fullscreen": "Fullscreen"
+    },
+    "Help.js": {
+      "Help": "Help",
+      "Source code": "Source code",
+      "About": "About"
+    },
+    "Language.js": {
+      "Language": "Language"
+    },
+    "Status.js": {
+      "Autosave": "Autosave"
+    }
+  },
+  "sidebar": {
+    "Project.js": {
+      "PROJECT": "PROJECT",
+      "Renderer": "Renderer",
+      "Antialias": "Antialias",
+      "VR": "VR"
+    },
+    "Scene.js": {
+      "SCENE": "SCENE",
+      "Fog": "Fog",
+      "Fog color": "Fog color",
+      "Fog near": "Fog near",
+      "Fog far": "Fog far",
+      "Fog density": "Fog density",
+      "None": "None",
+      "Linear": "Linear",
+      "Exponential": "Exponential"
+    },
+    "Object3D.js": {
+      "Actions": "Actions",
+      "Reset Position": "Reset Position",
+      "Reset Rotation": "Reset Rotation",
+      "Reset Scale": "Reset Scale",
+      "UUID": "UUID",
+      "Name": "Name",
+      "Parent": "Parent",
+      "Position": "Position",
+      "Rotation": "Rotation",
+      "Scale": "Scale",
+      "Fov": "Fov",
+      "Near": "Near",
+      "Far": "Far",
+      "Intensity": "Intensity",
+      "Color": "Color",
+      "Ground color": "Ground color",
+      "Distance": "Distance",
+      "Angle": "Angle",
+      "Exponent": "Exponent",
+      "Decay": "Decay",
+      "Visible": "Visible",
+      "User data": "User data"
+    },
+    "Material.js": {
+      "MATERIAL":"MATERIAL",
+      "UUID": "UUID",
+      "Name": "Name",
+      "Type": "Type",
+      "Color": "Color",
+      "Emissive": "Emissive",
+      "Specular": "Specular",
+      "Shininess": "Shininess",
+      "Uniforms": "Uniforms",
+      "Vertex Shader": "Vertex Shader",
+      "Fragment Shader": "Fragment Shader",
+      "Vertex Colors": "Vertex Colors",
+      "Skinning": "Skinning",
+      "Map": "Map",
+      "Alpha Map": "Alpha Map",
+      "Light Map": "Light Map",
+      "Bump Map": "Bump Map",
+      "Normal Map": "Normal Map",
+      "Specular Map": "Specular Map",
+      "Env Map": "Env Map",
+      "Side": "Side",
+      "Shading": "Shading",
+      "Blending": "Blending",
+      "Opacity": "Opacity",
+      "Transparent": "Transparent",
+      "Wireframe": "Wireframe"
+    },
+    "Script.js": {
+      "Script": "Script",
+      "New": "New"
+    },
+    "Texture.js": {
+      "Locking angle": "Locking angle",
+      "Marker":"Marker",
+      "Blurry":"Blurry",
+      "Calligraphy":"Calligraphy",
+      "Thick":"Thick",
+      "InkDrop":"InkDrop",
+      "Star":"Star",
+      "Texture":"Texture",
+      "Spray":"Spray",
+      "RandomStar":"RandomStar",
+      "TEXTURE":"TEXTURE",
+      "Camera Toggle":"Camera Toggle",
+      "reset camera":"reset camera",
+      "brash":"brash",
+      "Size":"Size",
+      "Color":"Color",
+      "export Textured Model":"export Textured Model"
+    },
+    "Geometry.js": {
+      "Actions": "Actions",
+      "Center": "Center",
+      "Flatten": "Flatten",
+      "UUID": "UUID",
+      "Name": "Name"
+    },
+    "Geometry.BoxGeometry.js": {
+      "Width": "Width",
+      "Height": "Height",
+      "Depth": "Depth",
+      "Width segments": "Width segments",
+      "Height segments": "Height segments",
+      "Depth segments": "Depth segments"
+    },
+    "Geometry.BufferGeometry.js": {
+      "Vertices": "Vertices",
+      "Faces": "Faces"
+    },
+    "Geometry.CircleGeometry.js": {
+      "Radius": "Radius",
+      "Segments": "Segments"
+    },
+    "Geometry.CylinderGeometry.js": {
+      "Radius top": "Radius top",
+      "Radius bottom": "Radius bottom",
+      "Height": "Height",
+      "Radial segments": "Radial segments",
+      "Height segments": "Height segments",
+      "Open ended": "Open ended"
+    },
+    "Geometry.Geometry.js": {
+      "Vertices": "Vertices",
+      "Faces": "Faces"
+    },
+    "Geometry.IcosahedronGeometry.js": {
+      "Radius": "Radius",
+      "Detail": "Detail"
+    },
+    "Geometry.Modifiers.js": {
+      "Compute Vertex Normals": "Compute Vertex Normals",
+      "Convert to Geometry": "Convert to Geometry"
+    },
+    "Geometry.PlaneGeometry.js": {
+      "Width": "Width",
+      "Height": "Height",
+      "Width segments": "Width segments",
+      "Height segments": "Height segments"
+    },
+    "Geometry.SphereGeometry.js": {
+      "Radius": "Radius",
+      "Width segments": "Width segments",
+      "Height segments": "Height segments",
+      "Phi start": "Phi start",
+      "Phi length": "Phi length",
+      "Theta start": "Theta start",
+      "Theta length": "Theta length"
+    },
+    "Geometry.TorusGeometry.js": {
+      "Radius": "Radius",
+      "Tube": "Tube",
+      "Radial segments": "Radial segments",
+      "Tubular segments": "Tubular segments",
+      "Arc": "Arc"
+    },
+    "Geometry.TorusKnotGeometry.js": {
+      "Radius": "Radius",
+      "Tube": "Tube",
+      "Radial segments": "Radial segments",
+      "Tubular segments": "Tubular segments",
+      "P": "P",
+      "Q": "Q",
+      "Height scale": "Height scale"
+    }
+  },
+  "toolbar": {
+    "Toolbar.js": {
+      "translate": "translate",
+      "rotate": "rotate",
+      "scale": "scale",
+      "Grid: ": "Grid",
+      "snap": "snap",
+      "local": "local",
+      "show": "show"
+    }
+  }
+}

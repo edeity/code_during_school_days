@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获奖名单</title>
+</head>
+<body>
+    <p>仅供后台查询中奖名单,请勿对外透露该页面连接</p>
+
+    <%  @redeems.each do|re|%>
+    <p>中奖日期: <%= re.created_at %>  兑奖码: <%= re.redeem_code %></p>
+    <% end %>
+</body>
+</html>

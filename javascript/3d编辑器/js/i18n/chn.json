@@ -1,0 +1,237 @@
+{
+  "type": "chn",
+  "menubar" : {
+    "File.js" : {
+      "File" : "文件",
+      "New" : "新建项目",
+      "Import" : "导入文件",
+      "Export Geometry":"导出几何体",
+      "Export Object":"导出物体",
+      "Export Scene":"导出场景",
+      "Export OBJ":"导出为obj格式",
+      "Export STL":"导出为STL格式",
+      "Publish":"发布"
+    },
+    "Edit.js" : {
+      "Edit" : "编辑",
+      "Clone" : "复制",
+      "Delete" : "删除"
+    },
+    "Add.js" : {
+      "Add" : "添加物体",
+      "Group" : "分组",
+      "Plane": "平面",
+      "Box" : "盒",
+      "Circle":"圆形平面",
+      "Cylinder":"圆柱",
+      "Sphere":"球",
+      "Icosahedron":"二十面体",
+      "Torus":"圆环面",
+      "TorusKnot":"环面纽结",
+      "Sprite":"Sprite",
+      "PointLight":"点光",
+      "SpotLight":"聚光灯",
+      "DirectionalLight":"平行光",
+      "HemisphereLight":"半球光",
+      "AmbientLight":"场景光",
+      "PerspectiveCamera":"透视相机"
+    },
+    "View.js" : {
+      "View":"主题",
+      "Light theme":"明亮灰",
+      "Dark theme":"神秘黑",
+      "Fullscreen":"全屏"
+    },
+    "Help.js" : {
+      "Help":"帮助",
+      "Source code":"源码",
+      "About":"关于"
+    },
+    "Language.js" : {
+      "Language":"语言"
+    },
+    "Status.js" : {
+      "Autosave":"自动保存"
+    }
+  },
+  "sidebar" : {
+    "Project.js":{
+      "PROJECT" : "项目",
+      "Renderer" : "渲染器",
+      "Antialias":"抗齿轮",
+      "VR":"VR"
+    },
+    "Scene.js":{
+      "SCENE":"场景",
+      "Fog":"雾化",
+      "Fog color":"颜色",
+      "Fog near":"雾化近距",
+      "Fog far":"雾化远距",
+      "Fog density":"雾化距离",
+      "None":"无",
+      "Linear":"线性",
+      "Exponential":"指数级"
+    },
+    "Object3D.js" : {
+      "Actions":"动作",
+      "Reset Position":"还原位置",
+      "Reset Rotation":"还原旋转度",
+      "Reset Scale":"还原尺寸",
+      "UUID":"UUID",
+      "Name":"名称",
+      "Parent":"父类",
+      "Position":"位置",
+      "Rotation":"旋转",
+      "Scale":"尺寸",
+      "Fov":"Fov",
+      "Near":"Near",
+      "Far":"Far",
+      "Intensity":"光照强度",
+      "Color":"颜色",
+      "Ground color":"背景颜色",
+      "Distance":"距离",
+      "Angle":"角度",
+      "Exponent":"指数幂",
+      "Decay":"设置延续画面的透明比例 ",
+      "Visible":"可见",
+      "User data":"用户数据"
+    },
+    "Material.js" : {
+      "MATERIAL":"材质",
+      "UUID":"UUID",
+      "Name":"名称",
+      "Type":"种类",
+      "Color":"颜色",
+      "Emissive":"自发光",
+      "Specular":"镜面反射",
+      "Shininess":"光滑度",
+      "Uniforms":"Uniforms",
+      "Vertex Shader":"顶点着色",
+      "Fragment Shader":"片段着色",
+      "Vertex Colors":"顶点颜色",
+      "Skinning":"Skinning",
+      "Map":"Map",
+      "Alpha Map":"Alpha Map",
+      "Light Map":"Light Map",
+      "Bump Map":"Bump Map",
+      "Normal Map":"Normal Map",
+      "Specular Map":"Specular Map",
+      "Env Map":"Env Map",
+      "Side":"侧面",
+      "Shading":"阴影",
+      "Blending":"混合",
+      "Opacity":"不透明",
+      "Transparent":"透明",
+      "Wireframe":"线框"
+    },
+    "Script.js" : {
+      "Script":"脚本",
+      "New":"新建"
+    },
+    "Texture.js": {
+      "Locking angle": "锁定角度",
+      "Marker":"Marker",
+      "Blurry":"Blurry",
+      "Calligraphy":"Calligraphy",
+      "Thick":"Thick",
+      "InkDrop":"InkDrop",
+      "Star":"Star",
+      "Texture":"Texture",
+      "Spray":"Spray",
+      "RandomStar":"RandomStar",
+      "TEXTURE":"DIY纹理",
+      "Camera Toggle":"锁定视角",
+      "reset camera":"还原视角",
+      "brash":"画笔种类",
+      "Size":"画笔大小",
+      "Color":"颜色",
+      "export Textured Model":"导出纹理模型"
+    },
+    "Geometry.js" : {
+      "Actions":"动作",
+      "Center":"Center",
+      "Flatten":"Flatten",
+      "UUID":"UUID",
+      "Name":"Name"
+    },
+    "Geometry.BoxGeometry.js":{
+      "Width":"Width",
+      "Height":"Height",
+      "Depth":"Depth",
+      "Width segments":"Width segments",
+      "Height segments":"Height segments",
+      "Depth segments":"Depth segments"
+    },
+    "Geometry.BufferGeometry.js":{
+      "Vertices":"Vertices",
+      "Faces":"Faces"
+    },
+    "Geometry.CircleGeometry.js":{
+      "Radius":"Radius",
+      "Segments":"Segments"
+    },
+    "Geometry.CylinderGeometry.js":{
+      "Radius top":"Radius top",
+      "Radius bottom":"Radius bottom",
+      "Height":"Height",
+      "Radial segments":"Radial segments",
+      "Height segments":"Height segments",
+      "Open ended":"Open ended"
+    },
+    "Geometry.Geometry.js":{
+      "Vertices":"Vertices",
+      "Faces":"Faces"
+    },
+    "Geometry.IcosahedronGeometry.js":{
+      "Radius":"Radius",
+      "Detail":"Detail"
+    },
+    "Geometry.Modifiers.js":{
+      "Compute Vertex Normals":"计算顶点发现",
+      "Convert to Geometry":"转换成几何体"
+    },
+    "Geometry.PlaneGeometry.js":{
+      "Width":"Width",
+      "Height":"Height",
+      "Width segments" : "Width segments",
+      "Height segments" : "Height segments"
+    },
+
+    "Geometry.SphereGeometry.js":{
+      "Radius":"Radius",
+      "Width segments":"宽度段",
+      "Height segments":"高度段",
+      "Phi start":"Phi start",
+      "Phi length":"Phi length",
+      "Theta start":"Theta start",
+      "Theta length":"Theta length"
+    },
+    "Geometry.TorusGeometry.js":{
+      "Radius":"Radius",
+      "Tube":"Tube",
+      "Radial segments":"Radial segments",
+      "Tubular segments":"Tubular segments",
+      "Arc":"Arc"
+    },
+    "Geometry.TorusKnotGeometry.js":{
+      "Radius":"Radius",
+      "Tube":"Tube",
+      "Radial segments":"Radial segments",
+      "Tubular segments":"Tubular segments",
+      "P":"P",
+      "Q":"Q",
+      "Height scale":"Height scale"
+    }
+  },
+  "toolbar" : {
+    "Toolbar.js": {
+      "translate":"移动",
+      "rotate":"旋转",
+      "scale":"尺寸",
+      "Grid: ": "网格",
+      "snap":"快照",
+      "local":"local",
+      "show":"显示网格"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport"
+          content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/>
+    <link rel="stylesheet" type="text/css" href="css/common&v1.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <script type="text/javascript" src="js/libs/rem.js"></script>
+    <title>我在参与2016韩都衣舍·潮童星国际少儿超模大赛 幸运抽奖环节，奖品丰富快来试一试！</title>
+    <style>
+        div.supplememt p {font-size: 1.2rem;}
+        .whole {background-color: #2E2E5B;}
+        #lottery-container {  position: relative;  z-index: 99;  width: 100%;  margin-top: 15.3rem; padding-bottom: 3rem; font-size: 1rem;  }
+        #lottery-container .header-tips {  text-align: center;  }
+        #lottery-container .figure01 {  position: relative;  width: 100%;  height: auto;  }
+
+        /* 针对转盘 */
+        #draw-lottery {  position: relative;  padding-top: 3.5rem;  }
+        #rotate-hand {  position: absolute;  width: 8.5rem;  height: 9.5rem;  top: 9rem;  left: 11rem;  background: url("img/lottery/rotate_hand.png");  background-size: cover;  }
+        #rotate-table {  width: 20.5rem;  height: 20.5rem;  margin: 0 auto;  background: url("img/lottery/rotate_tabel.png");  background-size: cover;  }
+
+        /* 针对转盘描述*/
+        div.draw-loterry-rule {  width: 18rem;  margin: 0 auto;  color: #E7E7E7;  }
+        div.draw-loterry-rule ol {  padding-left: 0;  list-style: none;  }
+        div.supplememt {  padding: 1.5rem;  margin: 2rem 2rem 0 2rem;  color: black;  background-color: #E5DEC7;  }
+        div.supplememt h3 {  margin-bottom: 1rem;  color: #DD423F;  }
+        div.supplememt p {  margin-bottom: 1rem;  }
+        div.supplememt span.weixin-name {  color: #DD423F;  }
+
+        /*优惠券样式*/
+        .pop-div {  display: block;  position: fixed;  width: 100%;  height: 100%;  z-index: 99;  background-color: rgba(0, 0, 0, 0.7);  top: 0;  left: 0;  }
+        .close {  position: absolute;  width: 5rem;  height: 5rem;  top: 3rem;  right: 2rem;  }
+        #taobao-token {  position: relative;  width: 28rem;  height: 30rem;  margin: 5rem auto;  background: url('img/lottery_taobao_token.png');  background-size: cover;  color: #3A3939;  }
+        #taobao-kind {  position: absolute;  width: 100%;  top: 16rem;  text-align: center;  font-size: 1.5rem;  }
+        #taobao-token-id {  position: absolute;  display: block; width: 78%;  left: 0; right: 0;  bottom: 4rem; padding: 1rem 0; margin: 0 auto; border-radius: 0.2rem; background-color: white; text-align: center;  font-size: 1.5rem;  }
+        /*#taobao-token-id:hover {background-color: #E69200;}*/
+        /*一等奖样式*/
+        .pop-div {  display: block;  position: fixed;  width: 100%;  height: 100%;  z-index: 99;  background-color: rgba(0, 0, 0, 0.7);  top: 0;  left: 0;  }
+        .close {  position: absolute;  width: 4rem;  height: 4rem;  top: 3rem;  right: 3.5rem;  }
+        #prize-token {  position: relative;  width: 28rem;  height: 30rem;  margin: 5rem auto;  background: url('img/lottery_prize_token.png');  background-size: cover;  color: #3A3939;  }
+        #prize-token-id {  position: absolute;  left: 0; right: 0; width: 15rem;  margin: 0 auto; bottom: 3rem;  text-align: center;  font-size: 1rem;  }
+    </style>
+</head>
+<body>
+<div class="whole">
+    <div id="lottery-container">
+        <div class="header-tips">
+            一个ID每天可投3票( 针对不同的选手 )
+        </div>
+        <!-- 抽奖 S -->
+        <div id="draw-lottery">
+            <div id="rotate-table"></div>
+            <div id="rotate-hand"></div>
+        </div>
+        <!-- 抽奖 E -->
+        <div class="draw-loterry-rule">
+            <h3>抽奖规则:</h3>
+            <ol>
+                <li>1. 每投票一次可参与抽奖一次</li>
+                <li>2. 所有奖品均不得兑换成现金.</li>
+            </ol>
+        </div>
+        <div id="more-price" class="supplememt">
+            <h3>更多实力大奖:</h3>
+            <p>1. 6000元上海迪士尼亲子游 2. 3000元儿童时尚购物金卡 3. 1799元儿童智能钢琴等等</p>
+            <span>详情奖品信息可关注" <span class="weixin-name">minizaru819</span> "微信账号</span>
+        </div>
+        <div>
+            <a href="http://mp.weixin.qq.com/s?__biz=MzAxMDA5MTU3Nw==&mid=402206674&idx=1&sn=5c3917b5c6fc9f6dc6472e360d2e59b7#rd">
+                <img src="/img/follow.png" style="width: 100%;">
+            </a>
+        </div>
+    </div>
+    <div class="bg_cover">
+        <!--背景-->
+        <div class="bg">
+            <img src="img/lottery/poster_prize_001.jpg">
+            <img src="img/lottery/poster_prize_002.jpg">
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a class="btn" href="/signup">我要报名<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/vote">我要投票<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn" href="/rules">活动规则<span><div class="vertical_line">&nbsp;</div></span></a>
+    <a class="btn active" href="/lottery">参与有礼</a>
+</footer>
+</body>
+<script src="js/libs/jquery-2.2.0.min.js"></script>
+<script src="js/pages/jquery.tips.min.js"></script>
+<script src="js/pages/lottery&v2.min.js"></script>
+<!--<script src="js/libs/clipboard.min.js"></script>-->
+<!-- 统计代码 -->
+<script type="text/javascript" src="http://pingjs.qq.com/h5/stats.js" name="MTAH5" sid="500035058"></script>
+</html>
