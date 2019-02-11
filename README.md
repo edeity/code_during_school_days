@@ -1,6 +1,4 @@
-那些拙劣的代码，却是如此美好的回忆。
-
-![致终将逝去的青春](https://edeity.oss-cn-shenzhen.aliyuncs.com/2019/time.jpeg)。
+![致终将逝去的青春](./img/time.jpeg)
 
 ## Java
 
